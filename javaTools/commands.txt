@@ -1,0 +1,27 @@
+1;for compile from SRC dir ,and all classes files should be create and stored in classes dir.
+javac -d ..\classes com\oyos\keyboard\util\*.java
+
+2;now from testCases dir ,toCompile 
+javac -classpath ..\classes;. filename.java(Keyboardtest1.java)
+toExecute 
+java -classpath ..\classes;. Keyboardtest1
+
+3;to create jar file from classes dir
+jar -cvf ..\dist\tmKeyboardjar.jar com
+
+4;after creating jar file in dist dir if we want to compile or execute from testCases dir through jar files 
+compile:
+javac -classpath ..\dist\mykyboardjar.jar;. Keyboardtest1.java
+or
+javac -classpath ..\dist\*;. Keyboardtest1.java
+exceute:
+java -classpath ..\dist\tmKeyboardJAR.jar;. Keyboardtest1
+ 
+*********************************************************************\
+setterGetter toCompile
+from its src 
+javac -d ..\classes setterGetter.java
+setterGetter testcase excution
+java -classpath ..\classes;. com.oyos.setterGetterGenerator.util.setterGetter _classname_
+java -classpath ..\dist\*;. com.oyos.setterGetterGenerator.util.setterGetter _ClassName_
+*********************************************************************
